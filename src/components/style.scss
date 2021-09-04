@@ -1,0 +1,7 @@
+.react-copied {
+  user-select: none;
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
