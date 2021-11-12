@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 import filterProps from '@jswork/filter-react-props';
 import debounce from 'debounce';
 
-export type Props = {
+export type ReactCopiedProps = {
   /**
    * The extended className for component.
    * @default ''
    * @type string
-   * @memberof Props
+   * @memberof ReactCopiedProps
    * @public
    * @example
    * <ReactCopied className="copied" />
@@ -19,7 +19,7 @@ export type Props = {
    * The change handler.
    * @default noop
    * @type function
-   * @memberof Props
+   * @memberof ReactCopiedProps
    * @public
    * @example
    * <ReactCopied onChange={(e) => console.log('copied.')} />
@@ -29,7 +29,7 @@ export type Props = {
    * The texts.
    * @default ['Copy', 'Copied']
    * @type string[]
-   * @memberof Props
+   * @memberof ReactCopiedProps
    * @public
    * @example
    * <ReactCopied texts={['Copy', 'Copied!']} />
@@ -39,7 +39,7 @@ export type Props = {
    * The interval when timer change.
    * @default 500
    * @type number
-   * @memberof Props
+   * @memberof ReactCopiedProps
    * @public
    * @example
    * <ReactCopied interval={1000} />
@@ -49,14 +49,14 @@ export type Props = {
 
 const CLASS_NAME = 'react-copied';
 
-export default class ReactCopied extends Component<Props> {
+export default class ReactCopied extends Component<ReactCopiedProps> {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
 
   static defaultProps = {
     onChange: noop,
     items: ['Copy', 'Copied'],
-    interval: 1000
+    interval: 600
   };
 
   state = { index: 0 };
